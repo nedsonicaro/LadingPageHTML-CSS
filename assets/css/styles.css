@@ -51,6 +51,22 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
+    grid-template-areas: 
+            "a b c"
+            "a b c"
+            "a b c";
+}
+
+.grid:nth-child(1) {
+    grid-area: a;
+} 
+    
+.grid:nth-child(2) {
+    grid-area: a;
+}
+
+.grid:nth-child(3) {
+    grid-area: a;
 }
 
 .grid h3 {
@@ -59,6 +75,8 @@
     padding-left: 5rem;
     padding-bottom: 2rem;
 }
+
+
 
 .grid h3::before {
     counter-increment: grid-counter;
@@ -69,4 +87,20 @@
     top: -4rem;
     left: -2rem;
     transform: rotate(5deg);
+}
+
+.gallery-img {
+    width: 100%;
+    max-width: 36rem;
+    max-height: 36rem;
+    overflow: hidden;
+}
+
+.gallery-img img {
+    transition: all 300ms ease-in-out;
+
+}
+
+.gallery-img img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
