@@ -1,6 +1,6 @@
 .intro-content {
     position: relative;
-    top: -8rem;
+    /* top: -8rem; */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     align-items: center;
@@ -8,13 +8,15 @@
     min-height: 100vh;
 }
 
-.intro-text-content, .intro-img {
+.intro-text-content,
+.intro-img {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
-   
-.intro-img img, .intro-img svg {
+
+.intro-img img,
+.intro-img svg {
     max-width: 100%;
     height: auto;
 }
@@ -27,7 +29,7 @@
     flex-wrap: nowrap;
     justify-content: center;
     height: 100vh;
-    text-align: center; 
+    text-align: center;
 }
 
 .grid-one-content {
@@ -51,23 +53,8 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     counter-reset: grid-counter;
-    grid-template-areas: 
-            "a b c"
-            "a b c"
-            "a b c";
 }
 
-.grid:nth-child(1) {
-    grid-area: a;
-} 
-    
-.grid:nth-child(2) {
-    grid-area: a;
-}
-
-.grid:nth-child(3) {
-    grid-area: a;
-}
 
 .grid h3 {
     font-size: 3rem;
@@ -103,4 +90,52 @@
 
 .gallery-img img:hover {
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.contact-form .form-grid {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+}
+
+.form-group {
+    min-width: 320px;
+    flex: 1 1 400px;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input .form-group textarea {
+    border: none;
+    background: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 3rem;
+}
+
+.form-group button {
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.form-group button:hover {
+    background: var(--white-color);
+    color: var(--primary-color); 
+}
+
+.form-group ::placeholder {
+    color: var(--light-gray-color);
 }
